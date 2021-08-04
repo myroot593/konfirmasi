@@ -47,7 +47,7 @@ class crud extends Database
 			$stmt->bind_param("iss",$data,$param_email,$param_hash);
 			
 			$param_email=$email;
-			$param_hash=md5(rand(0,1000));//menghasilkan hash untuk konfirmasi akun
+			$param_hash=$hash;//menghasilkan hash untuk konfirmasi akun
 			$param_data=$data;
 			if($stmt->execute())
 			{
