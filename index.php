@@ -49,6 +49,32 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 				{
 					//disini sistem tidak mengirimkan data link untuk konfirmasi ke email pendaftar
 					//Anda perlu menambahkan fungsi kirim email atau mail() beserta data hashnya
+					
+					/** Aktifkan ini agar sistem mengirim email ke akun pendaftar
+						$to = $email;
+						$from = "admin@".$_SERVER['SERVER_NAME']."";
+						$subject = "Konfirmasi Akun";					
+						$message = '
+						Terima kasih sudah mendaftar ! akun Anda sudah dibuat'."\r\n";
+						$message .='Anda dapat segera login dengan mengklik'."\r\n";
+						$message .='tautan dibawah ini'."\r\n";
+						
+						
+
+						$message.='-------------------------'."\r\n";
+						$message .='Username : '.$username.''."\r\n";
+						$message .= 'Password : '.$pass.''."\r\n";
+						$message.='-------------------------'."\r\n";
+						$message .='Klik link konfirmasi dibawah ini'."\r\n";
+						$message .='http://'.$_SERVER['SERVER_NAME'].'/test_konfirmasi.php?email='.$email.'&hash='.$hash.''."\r\n";
+							$message .='Anda dapat mengabaikan ini, jika ini bukan Anda'."\r\n";
+						$headers = $from;
+						
+						//mail(to, subject, message, $headers)
+						mail($to, $subject, $message, $headers);
+					
+					**/
+					
 					echo "<div class='alert alert-success'>Data berhasil disimpan</div>";
 				}
 				else
