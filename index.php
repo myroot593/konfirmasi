@@ -38,14 +38,17 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 		$pass=$_POST['pass'];
 		
 	}
+	$hash = md5(rand(0,1000));
+	
 	if(empty($username_err) && empty($email_err) && empty($pass_err))
 	{
 		if($obj->insertUser($username, $email, $pass))
 		{
 			$last=$obj->insertlastid_to_pending_user();
-				if($obj->insertPending_user($last, $email))
+				if($obj->insertPending_user($last, $email, $hash))
 				{
-					
+					//disini sistem tidak mengirimkan data link untuk konfirmasi ke email pendaftar
+					//Anda perlu menambahkan fungsi kirim email atau mail() beserta data hashnya
 					echo "<div class='alert alert-success'>Data berhasil disimpan</div>";
 				}
 				else
