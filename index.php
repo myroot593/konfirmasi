@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 				{
 					//disini sistem tidak mengirimkan data link untuk konfirmasi ke email pendaftar
 					//Anda perlu menambahkan fungsi kirim email atau mail() beserta data hashnya
-					
+					//Lihat tutorialnya di https://www.root93.co.id/2021/08/tutorial-php-mengirim-link-aktivasi.html
 					/** Aktifkan ini agar sistem mengirim email ke akun pendaftar
 						$to = $email;
 						$from = "admin@".$_SERVER['SERVER_NAME']."";
